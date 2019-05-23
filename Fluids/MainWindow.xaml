@@ -1,0 +1,19 @@
+﻿<Window x:Class="Fluids.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="600">
+    <Grid>
+        <StackPanel Width="100" HorizontalAlignment="Right" Background="DarkGray">
+            <ToggleButton Name="AutoUpdateButton" Content="Auto update" Click="AutoUpdateButton_OnClick"></ToggleButton>
+            <Label Content="{Binding ElementName=UPS, Path=Value}" ContentStringFormat="{}{0:#}"></Label>
+            <Slider Name="UPS" Minimum="1" Maximum="60" IsSnapToTickEnabled="True" Ticks="1, 2, 5, 10, 30, 60" Value="60" ValueChanged="UPS_OnValueChanged"></Slider>
+            <Button Content="Step update" Click="StepButton_OnClick"></Button>
+            <Button Content="Add to center" Click="AddToCenter_OnClick"></Button>
+            <Button Content="Add at random" Click="AddAtRandom_OnClick"></Button>
+            <Slider Name="AddValueExponent" Minimum="1" Maximum="5" IsSnapToTickEnabled="True" TickFrequency="1" Value="3"></Slider>
+        </StackPanel>
+    </Grid>
+</Window>
